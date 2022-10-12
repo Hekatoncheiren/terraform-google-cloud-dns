@@ -128,6 +128,10 @@ resource "google_dns_managed_zone" "public" {
       }
     }
   }
+
+  cloud_logging_config {
+    enable_logging = var.enable_cloud_logging
+  }
 }
 
 resource "google_dns_managed_zone" "reverse_lookup" {

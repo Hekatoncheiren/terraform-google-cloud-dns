@@ -91,10 +91,17 @@ variable "force_destroy" {
   default     = false
   type        = bool
 }
+
 variable "service_namespace_url" {
   type        = string
   default     = ""
   description = "The fully qualified or partial URL of the service directory namespace that should be associated with the zone. This should be formatted like https://servicedirectory.googleapis.com/v1/projects/{project}/locations/{location}/namespaces/{namespace_id} or simply projects/{project}/locations/{location}/namespaces/{namespace_id}."
+}
+
+variable "enable_cloud_logging" {
+  type        = bool
+  default     = false
+  description = "Enable query logging if set to true. Applies only if type is public."
 }
 
 ###############################################################################
